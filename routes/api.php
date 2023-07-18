@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'characters'], function () {
     Route::get('/leonard', [CharactersController::class, 'leonard']);
+    Route::get('/sheldon', [CharactersController::class, 'sheldon']);
 });

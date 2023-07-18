@@ -47,7 +47,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "docs": "@php artisan vendor:publish --provider=\"Knuckles\\Scribe\\ScribeServiceProvider\" --tag=scribe-config"
+        "docs": "php artisan config:clear && php artisan scribe:generate --force"
     },
     "extra": {
         "laravel": {

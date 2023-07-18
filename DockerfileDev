@@ -1,0 +1,19 @@
+FROM composer as build
+WORKDIR /app
+
+COPY . /app
+
+RUN composer install --no-interaction --prefer-source --optimize-autoloader --ignore-platform-reqs
+
+# Generate the api documentation
+RUN composer docs
+
+FROM php:8.1-fpm-alpine
+
+RUN docker-php-ext-install pdo pdo_mysql sockets
+
+# Define the work dir
+WORKDIR /app
+
+# Copy projeto to docker container
+COPY --from=build /app .
