@@ -1,0 +1,8 @@
+{
+    "success": false,
+    "message": "Error on creating pirate",
+    "errors": [
+        "error-1",
+        "error-2"
+    ]
+}

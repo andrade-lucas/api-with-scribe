@@ -1,0 +1,8 @@
+{
+    "success": false,
+    "message": "Error on get Sheldon`s message",
+    "errors": [
+        "error-1",
+        "error-2"
+    ]
+}

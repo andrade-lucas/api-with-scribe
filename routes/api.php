@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharactersController;
+use App\Http\Controllers\OnePieceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'characters'], function () {
     Route::get('/leonard', [CharactersController::class, 'leonard']);
     Route::get('/sheldon', [CharactersController::class, 'sheldon']);
+});
+
+Route::group(['prefix' => 'one-piece'], function () {
+    Route::post('/', [OnePieceController::class, 'create']);
+    Route::get('/{pirate}', [OnePieceController::class, 'getPirate']);
 });

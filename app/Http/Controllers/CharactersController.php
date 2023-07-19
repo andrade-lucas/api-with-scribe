@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 /**
  * @group The Big Bang Theory characters
@@ -31,7 +30,8 @@ class CharactersController extends Controller
      *
      * Get an answer from sheldon
      *
-     * @responseFile storage/responses/characters/sheldon.get.json
+     * @responseFile 200 storage/responses/characters/sheldon.get.json
+     * @responseFile 400 storage/responses/characters/sheldon.get.error.json
      *
      */
     public function sheldon(): JsonResponse
