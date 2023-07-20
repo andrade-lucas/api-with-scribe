@@ -46,14 +46,33 @@ class CharactersController extends Controller
      *
      * List all Big Bang Theory characters
      *
+     * @queryParam filter[name] string Character name. Example: Leonard
+     * @queryParam filter[real_name] string Real name. Example: Johnny Galecki
+     *
      * @authenticated
      *
      */
     public function index(): JsonResponse
     {
         return response()->json([
-            'message' => 'Hello, here is Sheldon!'
-        ], 200);
+            'data' => [
+                [
+                    'id' => 1,
+                    'name' => 'Sheldon Cooper',
+                    'real_name' => 'Jim Parsons',
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'Leonard Hofstadter',
+                    'real_name' => 'Johnny Galecki',
+                ],
+                [
+                    'id' => 3,
+                    'name' => 'Penny Hofstadter',
+                    'real_name' => 'Kaley Cuoco',
+                ],
+            ]
+        ]);
     }
 
     /**
@@ -67,8 +86,13 @@ class CharactersController extends Controller
     public function store(): JsonResponse
     {
         return response()->json([
-            'message' => 'Hello, here is Sheldon!'
-        ], 200);
+            'message' => 'Success',
+            'data' => [
+                'id' => 1,
+                'name' => 'Sheldon Cooper',
+                'real_name' => 'Jim Parsons',
+            ],
+        ], 201);
     }
 
     /**
@@ -82,8 +106,12 @@ class CharactersController extends Controller
     public function show(): JsonResponse
     {
         return response()->json([
-            'message' => 'Hello, here is Sheldon!'
-        ], 200);
+            'data' => [
+                'id' => 1,
+                'name' => 'Sheldon Cooper',
+                'real_name' => 'Jim Parsons',
+            ],
+        ]);
     }
 
     /**
@@ -99,8 +127,13 @@ class CharactersController extends Controller
     public function update(): JsonResponse
     {
         return response()->json([
-            'message' => 'Hello, here is Sheldon!'
-        ], 200);
+            'message' => 'Success',
+            'data' => [
+                'id' => 1,
+                'name' => 'Sheldon Cooper',
+                'real_name' => 'Jim Parsons',
+            ],
+        ]);
     }
 
     /**
@@ -114,7 +147,7 @@ class CharactersController extends Controller
     public function destroy(): JsonResponse
     {
         return response()->json([
-            'message' => 'Hello, here is Sheldon!'
-        ], 200);
+            'message' => 'Success'
+        ]);
     }
 }
